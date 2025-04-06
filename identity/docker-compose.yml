@@ -1,11 +1,34 @@
+networks:
+  racha-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+
 services:
   identity-api:
     container_name: identity-api
     build: .
     ports:
       - "8080:3000"
-    volumes: 
-      - .:/app 
+    volumes:
+      - .:/app
       - /app/node_modules
     command: npm run start:dev
- 
+    networks:
+      - racha-network
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    container_name: identity-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: identity
+    ports:
+      - "5431:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - racha-network
