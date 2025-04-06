@@ -1,0 +1,11 @@
+services:
+  identity-api:
+    container_name: identity-api
+    build: .
+    ports:
+      - "8080:3000"
+    volumes: 
+      - .:/app 
+      - /app/node_modules
+    command: npm run start:dev
+ 
