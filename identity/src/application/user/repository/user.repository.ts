@@ -1,4 +1,4 @@
-import { UserInputDTO } from '../dto/create-user.dto';
+import { UserInputDTO } from '../dto/user.input';
 import { UserFilter } from '../dto/filter-user.dto';
 import { UserDTO } from '../dto/user.dto';
 

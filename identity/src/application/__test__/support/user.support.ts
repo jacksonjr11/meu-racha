@@ -1,4 +1,4 @@
-import { UserInputDTO } from 'src/application/user/dto/create-user.dto';
+import { UserInputDTO } from 'src/application/user/dto/user.input';
 import { UserDTO } from 'src/application/user/dto/user.dto';
 
 export class UserSupportTest {

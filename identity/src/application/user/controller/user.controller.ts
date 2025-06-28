@@ -7,7 +7,7 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { UserInputDTO } from '../dto/create-user.dto';
+import { UserInputDTO } from '../dto/user.input';
 import { UserService } from '../service/user.service';
 import { UserFilter } from '../dto/filter-user.dto';
 

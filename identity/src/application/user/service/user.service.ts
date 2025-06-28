@@ -4,7 +4,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { UserInputDTO } from '../dto/create-user.dto';
+import { UserInputDTO } from '../dto/user.input';
 import { UserFilter } from '../dto/filter-user.dto';
 import { UserRepository } from '../repository/user.repository';
 import { UserDTO } from '../dto/user.dto';
