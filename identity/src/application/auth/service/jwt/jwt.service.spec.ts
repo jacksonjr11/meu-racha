@@ -18,7 +18,7 @@ describe(JwtService.name, () => {
     expect(service).toBeDefined();
   });
 
-  it('should return Token object', () => {
+  it('should return Token data', () => {
     const user = new UserSupportTest().getEntity();
     expect(service.generateToken(user)).toEqual({
       sub: user.id,

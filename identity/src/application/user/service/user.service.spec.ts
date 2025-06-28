@@ -62,9 +62,8 @@ describe(UserService.name, () => {
   it(`${UserService.prototype.create} shouldn't create user when there is user with unique data`, async () => {
     const input = new UserSupportTest().getInput();
     const user = new UserSupportTest().getEntity();
-    const users = [user];
 
-    repository.findByUniques = jest.fn().mockResolvedValue(users);
+    repository.findByUniques = jest.fn().mockResolvedValue(user);
 
     await expect(service.create(input)).rejects.toThrow(
       new ConflictException(

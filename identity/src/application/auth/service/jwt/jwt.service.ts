@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService as Jwt } from '@nestjs/jwt';
 import { UserDTO } from 'src/application/user/dto/user.dto';
+import { jwtConstants } from '../../constants';
+import { JwtDTO } from './jwt.dto';
 
 @Injectable()
 export class JwtService {
@@ -13,11 +15,11 @@ export class JwtService {
 
   async verifyAsync(token: string) {
     return await this.service.verifyAsync(token, {
-      secret: 'sharizard',
+      secret: jwtConstants.secret,
     });
   }
 
-  public generateToken(user: UserDTO) {
+  public generateToken(user: UserDTO): JwtDTO {
     return {
       sub: user.id,
       username: user.username,

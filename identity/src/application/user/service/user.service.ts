@@ -66,12 +66,12 @@ export class UserService {
     login: string;
     username: string;
   }): Promise<void> {
-    const users = await this.userRepository.findByUniques(
+    const user = await this.userRepository.findByUniques(
       uniques.login,
       uniques.username,
     );
 
-    if (users?.length) {
+    if (user) {
       throw new ConflictException(
         `Já existe usuário com esse login ou username cadastrado`,
       );
